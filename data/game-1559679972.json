@@ -1,0 +1,586 @@
+{
+    "clientRefreshInterval": 300, 
+    "gameList": [
+        {
+            "bannedChampions": [], 
+            "gameId": 4053917961, 
+            "gameLength": 311, 
+            "gameMode": "ARAM", 
+            "gameQueueConfigId": 450, 
+            "gameStartTime": 1559679482028, 
+            "gameType": "MATCHED_GAME", 
+            "mapId": 12, 
+            "observers": {
+                "encryptionKey": "WHA31KqSbkPPnMt2xFK5vo4MAT3OCLKX"
+            }, 
+            "participants": [
+                {
+                    "bot": false, 
+                    "championId": 25, 
+                    "profileIconId": 3164, 
+                    "spell1Id": 4, 
+                    "spell2Id": 32, 
+                    "summonerName": "KKonaW", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 122, 
+                    "profileIconId": 517, 
+                    "spell1Id": 4, 
+                    "spell2Id": 32, 
+                    "summonerName": "Lord Zerki", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 202, 
+                    "profileIconId": 4088, 
+                    "spell1Id": 3, 
+                    "spell2Id": 4, 
+                    "summonerName": "Krambambuli", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 14, 
+                    "profileIconId": 738, 
+                    "spell1Id": 4, 
+                    "spell2Id": 32, 
+                    "summonerName": "Captain Orakah", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 96, 
+                    "profileIconId": 539, 
+                    "spell1Id": 4, 
+                    "spell2Id": 7, 
+                    "summonerName": "Ifeelsick", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 201, 
+                    "profileIconId": 546, 
+                    "spell1Id": 32, 
+                    "spell2Id": 4, 
+                    "summonerName": "BIissen", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 89, 
+                    "profileIconId": 3478, 
+                    "spell1Id": 32, 
+                    "spell2Id": 4, 
+                    "summonerName": "\u00aa\u02c9\u00ba\u0142\u02c7\u02c9\u00f0\u00ba\u02c6\u02c9\u0141\u00aa\u00ba\u02c9\u02c7\u02c9", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 51, 
+                    "profileIconId": 4088, 
+                    "spell1Id": 4, 
+                    "spell2Id": 7, 
+                    "summonerName": "JoppieSos", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 163, 
+                    "profileIconId": 984, 
+                    "spell1Id": 7, 
+                    "spell2Id": 4, 
+                    "summonerName": "Carniflexin", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 497, 
+                    "profileIconId": 22, 
+                    "spell1Id": 4, 
+                    "spell2Id": 14, 
+                    "summonerName": "Bezwaar", 
+                    "teamId": 200
+                }
+            ], 
+            "platformId": "EUW1"
+        }, 
+        {
+            "bannedChampions": [], 
+            "gameId": 4053937850, 
+            "gameLength": 177, 
+            "gameMode": "ARAM", 
+            "gameQueueConfigId": 450, 
+            "gameStartTime": 1559679615886, 
+            "gameType": "MATCHED_GAME", 
+            "mapId": 12, 
+            "observers": {
+                "encryptionKey": "WHNdvq+InX/y1tomPx1qqUnRucFNsCI4"
+            }, 
+            "participants": [
+                {
+                    "bot": false, 
+                    "championId": 161, 
+                    "profileIconId": 4089, 
+                    "spell1Id": 7, 
+                    "spell2Id": 4, 
+                    "summonerName": "LouGab", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 518, 
+                    "profileIconId": 1438, 
+                    "spell1Id": 32, 
+                    "spell2Id": 4, 
+                    "summonerName": "Barukan 300", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 3, 
+                    "profileIconId": 3186, 
+                    "spell1Id": 32, 
+                    "spell2Id": 4, 
+                    "summonerName": "ThugLifeMadaFaka", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 133, 
+                    "profileIconId": 508, 
+                    "spell1Id": 4, 
+                    "spell2Id": 14, 
+                    "summonerName": "Iceman128", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 43, 
+                    "profileIconId": 4086, 
+                    "spell1Id": 3, 
+                    "spell2Id": 4, 
+                    "summonerName": "jSnax", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 7, 
+                    "profileIconId": 588, 
+                    "spell1Id": 4, 
+                    "spell2Id": 14, 
+                    "summonerName": "TheCereo", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 99, 
+                    "profileIconId": 4086, 
+                    "spell1Id": 4, 
+                    "spell2Id": 32, 
+                    "summonerName": "Pilosos", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 56, 
+                    "profileIconId": 3478, 
+                    "spell1Id": 4, 
+                    "spell2Id": 32, 
+                    "summonerName": "WhiteDemonJack", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 57, 
+                    "profileIconId": 3351, 
+                    "spell1Id": 32, 
+                    "spell2Id": 4, 
+                    "summonerName": "JOHN SONAAA", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 21, 
+                    "profileIconId": 1433, 
+                    "spell1Id": 7, 
+                    "spell2Id": 4, 
+                    "summonerName": "FilDaFunk", 
+                    "teamId": 200
+                }
+            ], 
+            "platformId": "EUW1"
+        }, 
+        {
+            "bannedChampions": [], 
+            "gameId": 4053948206, 
+            "gameLength": 10, 
+            "gameMode": "ARAM", 
+            "gameQueueConfigId": 450, 
+            "gameStartTime": 1559679783509, 
+            "gameType": "MATCHED_GAME", 
+            "mapId": 12, 
+            "observers": {
+                "encryptionKey": "iL+AeiARmYIoTQ35eN1HVNC1vxumBfAK"
+            }, 
+            "participants": [
+                {
+                    "bot": false, 
+                    "championId": 236, 
+                    "profileIconId": 563, 
+                    "spell1Id": 7, 
+                    "spell2Id": 4, 
+                    "summonerName": "KayCe", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 429, 
+                    "profileIconId": 4088, 
+                    "spell1Id": 7, 
+                    "spell2Id": 4, 
+                    "summonerName": "lucktown", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 35, 
+                    "profileIconId": 4027, 
+                    "spell1Id": 14, 
+                    "spell2Id": 4, 
+                    "summonerName": "mashidi", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 79, 
+                    "profileIconId": 3478, 
+                    "spell1Id": 32, 
+                    "spell2Id": 4, 
+                    "summonerName": "muyuu", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 115, 
+                    "profileIconId": 8, 
+                    "spell1Id": 4, 
+                    "spell2Id": 7, 
+                    "summonerName": "Tesonro", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 518, 
+                    "profileIconId": 902, 
+                    "spell1Id": 32, 
+                    "spell2Id": 4, 
+                    "summonerName": "Capta\u00edn Iglo", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 150, 
+                    "profileIconId": 588, 
+                    "spell1Id": 32, 
+                    "spell2Id": 4, 
+                    "summonerName": "RetardOfTheYear", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 222, 
+                    "profileIconId": 4027, 
+                    "spell1Id": 4, 
+                    "spell2Id": 7, 
+                    "summonerName": "R\u00f8rbert\u00f8", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 15, 
+                    "profileIconId": 3378, 
+                    "spell1Id": 4, 
+                    "spell2Id": 7, 
+                    "summonerName": "Kishini CHL", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 13, 
+                    "profileIconId": 3872, 
+                    "spell1Id": 1, 
+                    "spell2Id": 4, 
+                    "summonerName": "Uncle Leo", 
+                    "teamId": 200
+                }
+            ], 
+            "platformId": "EUW1"
+        }, 
+        {
+            "bannedChampions": [], 
+            "gameId": 4053947603, 
+            "gameLength": 217, 
+            "gameMode": "ARAM", 
+            "gameQueueConfigId": 450, 
+            "gameStartTime": 1559679576506, 
+            "gameType": "MATCHED_GAME", 
+            "mapId": 12, 
+            "observers": {
+                "encryptionKey": "tqJF4dSXGTOiJp889GESs7nhauQWW/K5"
+            }, 
+            "participants": [
+                {
+                    "bot": false, 
+                    "championId": 121, 
+                    "profileIconId": 3799, 
+                    "spell1Id": 4, 
+                    "spell2Id": 32, 
+                    "summonerName": "BadBO", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 86, 
+                    "profileIconId": 3478, 
+                    "spell1Id": 4, 
+                    "spell2Id": 32, 
+                    "summonerName": "InG4mE PWNS", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 142, 
+                    "profileIconId": 3478, 
+                    "spell1Id": 4, 
+                    "spell2Id": 14, 
+                    "summonerName": "Averio", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 497, 
+                    "profileIconId": 929, 
+                    "spell1Id": 4, 
+                    "spell2Id": 32, 
+                    "summonerName": "MISTER M0NSTER", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 17, 
+                    "profileIconId": 3232, 
+                    "spell1Id": 14, 
+                    "spell2Id": 4, 
+                    "summonerName": "PrEJuDIC1Zz", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 41, 
+                    "profileIconId": 3503, 
+                    "spell1Id": 4, 
+                    "spell2Id": 32, 
+                    "summonerName": "OmaeWaMouDead", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 8, 
+                    "profileIconId": 4027, 
+                    "spell1Id": 4, 
+                    "spell2Id": 32, 
+                    "summonerName": "bLiZZarD777", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 68, 
+                    "profileIconId": 3507, 
+                    "spell1Id": 4, 
+                    "spell2Id": 32, 
+                    "summonerName": "Mikis", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 76, 
+                    "profileIconId": 4022, 
+                    "spell1Id": 13, 
+                    "spell2Id": 4, 
+                    "summonerName": "spEcx", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 350, 
+                    "profileIconId": 3180, 
+                    "spell1Id": 3, 
+                    "spell2Id": 7, 
+                    "summonerName": "Joelph", 
+                    "teamId": 200
+                }
+            ], 
+            "platformId": "EUW1"
+        }, 
+        {
+            "bannedChampions": [
+                {
+                    "championId": 517, 
+                    "pickTurn": 1, 
+                    "teamId": 100
+                }, 
+                {
+                    "championId": 91, 
+                    "pickTurn": 2, 
+                    "teamId": 100
+                }, 
+                {
+                    "championId": 136, 
+                    "pickTurn": 3, 
+                    "teamId": 100
+                }, 
+                {
+                    "championId": 350, 
+                    "pickTurn": 4, 
+                    "teamId": 100
+                }, 
+                {
+                    "championId": 421, 
+                    "pickTurn": 5, 
+                    "teamId": 100
+                }, 
+                {
+                    "championId": 7, 
+                    "pickTurn": 6, 
+                    "teamId": 200
+                }, 
+                {
+                    "championId": 350, 
+                    "pickTurn": 7, 
+                    "teamId": 200
+                }, 
+                {
+                    "championId": 28, 
+                    "pickTurn": 8, 
+                    "teamId": 200
+                }, 
+                {
+                    "championId": 119, 
+                    "pickTurn": 9, 
+                    "teamId": 200
+                }, 
+                {
+                    "championId": 498, 
+                    "pickTurn": 10, 
+                    "teamId": 200
+                }
+            ], 
+            "gameId": 4053947332, 
+            "gameLength": 166, 
+            "gameMode": "CLASSIC", 
+            "gameQueueConfigId": 420, 
+            "gameStartTime": 1559679626683, 
+            "gameType": "MATCHED_GAME", 
+            "mapId": 11, 
+            "observers": {
+                "encryptionKey": "HM4CsRx600zcZoi+ksL5h7XhbVz8OqKh"
+            }, 
+            "participants": [
+                {
+                    "bot": false, 
+                    "championId": 8, 
+                    "profileIconId": 4100, 
+                    "spell1Id": 12, 
+                    "spell2Id": 4, 
+                    "summonerName": "S\u0399eeping", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 60, 
+                    "profileIconId": 1591, 
+                    "spell1Id": 11, 
+                    "spell2Id": 4, 
+                    "summonerName": "Zeik\u00f6", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 238, 
+                    "profileIconId": 898, 
+                    "spell1Id": 4, 
+                    "spell2Id": 14, 
+                    "summonerName": "420WeabooSlayer", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 15, 
+                    "profileIconId": 3496, 
+                    "spell1Id": 4, 
+                    "spell2Id": 7, 
+                    "summonerName": "xum\u00e4S", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 497, 
+                    "profileIconId": 3478, 
+                    "spell1Id": 4, 
+                    "spell2Id": 14, 
+                    "summonerName": "Supp2Chall3nger", 
+                    "teamId": 100
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 39, 
+                    "profileIconId": 1109, 
+                    "spell1Id": 14, 
+                    "spell2Id": 4, 
+                    "summonerName": "FB BOLULU", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 113, 
+                    "profileIconId": 3, 
+                    "spell1Id": 11, 
+                    "spell2Id": 4, 
+                    "summonerName": "FB Wiz", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 145, 
+                    "profileIconId": 660, 
+                    "spell1Id": 4, 
+                    "spell2Id": 7, 
+                    "summonerName": "BJK Ne\u00f8s", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 89, 
+                    "profileIconId": 4027, 
+                    "spell1Id": 4, 
+                    "spell2Id": 14, 
+                    "summonerName": "Eyhro", 
+                    "teamId": 200
+                }, 
+                {
+                    "bot": false, 
+                    "championId": 13, 
+                    "profileIconId": 3534, 
+                    "spell1Id": 4, 
+                    "spell2Id": 12, 
+                    "summonerName": "mouz Tolkin", 
+                    "teamId": 200
+                }
+            ], 
+            "platformId": "EUW1"
+        }
+    ]
+}
