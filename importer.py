@@ -42,5 +42,3 @@ while True:
 #)
 
 #print(mydb)
-
-
