@@ -25,8 +25,9 @@ while True:
         platformId = game['platformId']
 
         for iter in range(len(participants)):
-            summonerId = riotApiHandler.getSummonerBySummonerName(participants[iter]['summonerName'])['id']
+            summonerId = riotApiHandler.getSummonerBySummonerName(participants[iter]['summonerName'])['accountId']
             print summonerId
+            print type(summonerId)
             matchlists = riotApiHandler.getMatchlistsBySummonerId(summonerId)
 
 

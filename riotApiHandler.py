@@ -5,13 +5,28 @@ import urllib
 import json
 import requests
 
+HTTP_STATUS_CODES = {
+400:	'Bad request',
+401:	'Unauthorized',
+403:	'Forbidden',
+404:	'Data not found',
+405:	'Method not allowed',
+415:	'Unsupported media type',
+429:	'Rate limit exceeded',
+500:	'Internal server error',
+502:	'Bad gateway',
+503:	'Service unavailable',
+504:	'Gateway timeout'
+}
+
 @sleep_and_retry
 @limits(calls=3, period = 1)
 def getFeaturedGames():
-    r = requests.get('https://euw1.api.riotgames.com/lol/spectator/v4/featured-games?api_key=RGAPI-eb2d12a4-fb4e-4c6c-b621-4b2fa15e0208')
+    r = requests.get('https://euw1.api.riotgames.com/lol/spectator/v4/featured-games', headers = {'content-type': 'RGAPI-eb2d12a4-fb4e-4c6c-b621-4b2fa15e0208'})
     #print r.headers
-    if r.status_code == 429:
-        print 'EXCEEDED'
+    print r.json()
+    if r.status_code in HTTP_STATUS_CODES:
+        print HTTP_STATUS_CODES[r.status_code]
     else:
         return r.json()
 
@@ -20,8 +35,8 @@ def getFeaturedGames():
 def getMatchById(matchId):
     r = requests.get('https://euw1.api.riotgames.com/lol/match/v4/matches/%s?api_key=RGAPI-eb2d12a4-fb4e-4c6c-b621-4b2fa15e0208' % (matchId))
     #print r.headers
-    if r.status_code == 429:
-        print 'EXCEEDED'
+    if r.status_code in HTTP_STATUS_CODES:
+        print HTTP_STATUS_CODES[r.status_code]
     else:
         return r.json()
 
@@ -30,8 +45,8 @@ def getMatchById(matchId):
 def getMatchlistsBySummonerId(summonerId):
     r = requests.get('/lol/match/v4/matchlists/by-account/%s?api_key=RGAPI-eb2d12a4-fb4e-4c6c-b621-4b2fa15e0208' % (summonerId))
     #print r.headers
-    if r.status_code == 429:
-        print 'EXCEEDED'
+    if r.status_code in HTTP_STATUS_CODES:
+        print HTTP_STATUS_CODES[r.status_code]
     else:
         return r.json()
 
@@ -42,7 +57,7 @@ def getSummonerBySummonerName(summonerName):
     url = 'https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/' + escapedSummonerName  + '?api_key=RGAPI-eb2d12a4-fb4e-4c6c-b621-4b2fa15e0208'
     r = requests.get(url)
     #print r.headers
-    if r.status_code == 429:
-        print 'EXCEEDED'
+    if r.status_code in HTTP_STATUS_CODES:
+        print HTTP_STATUS_CODES[r.status_code]
     else:
         return r.json()
