@@ -3,9 +3,16 @@ import urllib
 import json
 import time
 import csv
+import hashlib
 
 import mysql.connector
 import riotApiHandler
+
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="admin",
+    passwd="badger77"
+)
 
 while True:
     featured_games = riotApiHandler.getFeaturedGames()
@@ -24,10 +31,12 @@ while True:
         participants = game['participants']
         platformId = game['platformId']
 
-        for iter in range(len(participants)):
-            summonerId = riotApiHandler.getSummonerBySummonerName(participants[iter]['summonerName'])['accountId']
-            matchlists = riotApiHandler.getMatchlistsBySummonerId(summonerId)
-            print matchlists
+        riotApiHandler.getMatchById(gameId)
+
+        #for iter in range(len(participants)):
+        #    summonerId = riotApiHandler.getSummonerBySummonerName(participants[iter]['summonerName'])['accountId']
+        #    matchlists = riotApiHandler.getMatchlistsBySummonerId(summonerId)
+        #    print riotApiHandler.neatenJson(matchlists)
 
 
     #print participants

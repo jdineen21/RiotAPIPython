@@ -21,11 +21,13 @@ HTTP_STATUS_CODES = {
 504:	'Gateway timeout'
 }
 
+def neatenJson(raw_json):
+    return json.dumps(raw_json, indent=4, sort_keys=True)
+
 @sleep_and_retry
-@limits(calls=3, period = 1)
+@limits(calls=1, period = 2)
 def getFeaturedGames():
     r = requests.get('https://euw1.api.riotgames.com/lol/spectator/v4/featured-games?api_key=%s' % (api_key))
-    #print r.headers
     print r.json()
     if r.status_code in HTTP_STATUS_CODES:
         print HTTP_STATUS_CODES[r.status_code]
@@ -33,10 +35,11 @@ def getFeaturedGames():
         return r.json()
 
 @sleep_and_retry
-@limits(calls=3, period = 1)
+@limits(calls=1, period = 2)
 def getMatchById(matchId):
-    r = requests.get('https://euw1.api.riotgames.com/lol/match/v4/matches/%s?api_key=%s' % (api_key))
-    #print r.headers
+    escapedMatchId = matchId
+    url = 'https://euw1.api.riotgames.com/lol/match/v4/matches/%s?api_key=%s' % (escapedMatchId, api_key)
+    r = requests.get(url)
     if r.status_code in HTTP_STATUS_CODES:
         print HTTP_STATUS_CODES[r.status_code]
     else:
@@ -48,7 +51,6 @@ def getMatchlistsBySummonerId(summonerId):
     escapedSummonerId = urllib.quote(summonerId.encode('utf -8'))
     url = 'https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account/%s?api_key=%s' % (escapedSummonerId, api_key)
     r = requests.get(url)
-    #print r.headers
     if r.status_code in HTTP_STATUS_CODES:
         print HTTP_STATUS_CODES[r.status_code]
     else:
@@ -60,7 +62,6 @@ def getSummonerBySummonerName(summonerName):
     escapedSummonerName = urllib.quote(summonerName.encode('utf -8'))
     url = 'https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/%s?api_key=%s' % (escapedSummonerName, api_key)
     r = requests.get(url)
-    #print r.headers
     if r.status_code in HTTP_STATUS_CODES:
         print HTTP_STATUS_CODES[r.status_code]
     else:
