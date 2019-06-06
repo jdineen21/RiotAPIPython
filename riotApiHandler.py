@@ -22,7 +22,7 @@ HTTP_STATUS_CODES = {
 @sleep_and_retry
 @limits(calls=3, period = 1)
 def getFeaturedGames():
-    r = requests.get('https://euw1.api.riotgames.com/lol/spectator/v4/featured-games', headers = {'content-type': 'RGAPI-eb2d12a4-fb4e-4c6c-b621-4b2fa15e0208'})
+    r = requests.get('https://euw1.api.riotgames.com/lol/spectator/v4/featured-games?api_key=RGAPI-eb2d12a4-fb4e-4c6c-b621-4b2fa15e0208'})
     #print r.headers
     print r.json()
     if r.status_code in HTTP_STATUS_CODES:
