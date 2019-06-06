@@ -5,6 +5,8 @@ import urllib
 import json
 import requests
 
+api_key = 'RGAPI-eb2d12a4-fb4e-4c6c-b621-4b2fa15e0208'
+
 HTTP_STATUS_CODES = {
 400:	'Bad request',
 401:	'Unauthorized',
@@ -22,7 +24,7 @@ HTTP_STATUS_CODES = {
 @sleep_and_retry
 @limits(calls=3, period = 1)
 def getFeaturedGames():
-    r = requests.get('https://euw1.api.riotgames.com/lol/spectator/v4/featured-games?api_key=RGAPI-eb2d12a4-fb4e-4c6c-b621-4b2fa15e0208'})
+    r = requests.get('https://euw1.api.riotgames.com/lol/spectator/v4/featured-games?api_key=%s' % (api_key))
     #print r.headers
     print r.json()
     if r.status_code in HTTP_STATUS_CODES:
@@ -33,7 +35,7 @@ def getFeaturedGames():
 @sleep_and_retry
 @limits(calls=3, period = 1)
 def getMatchById(matchId):
-    r = requests.get('https://euw1.api.riotgames.com/lol/match/v4/matches/%s?api_key=RGAPI-eb2d12a4-fb4e-4c6c-b621-4b2fa15e0208' % (matchId))
+    r = requests.get('https://euw1.api.riotgames.com/lol/match/v4/matches/%s?api_key=%s' % (api_key))
     #print r.headers
     if r.status_code in HTTP_STATUS_CODES:
         print HTTP_STATUS_CODES[r.status_code]
@@ -43,7 +45,9 @@ def getMatchById(matchId):
 @sleep_and_retry
 @limits(calls=1, period = 2)
 def getMatchlistsBySummonerId(summonerId):
-    r = requests.get('/lol/match/v4/matchlists/by-account/%s?api_key=RGAPI-eb2d12a4-fb4e-4c6c-b621-4b2fa15e0208' % (summonerId))
+    escapedSummonerId = urllib.quote(summonerId.encode('utf -8'))
+    url = 'https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account/%s?api_key=%s' % (escapedSummonerId, api_key)
+    r = requests.get(url)
     #print r.headers
     if r.status_code in HTTP_STATUS_CODES:
         print HTTP_STATUS_CODES[r.status_code]
@@ -54,7 +58,7 @@ def getMatchlistsBySummonerId(summonerId):
 @limits(calls=1, period = 2)
 def getSummonerBySummonerName(summonerName):
     escapedSummonerName = urllib.quote(summonerName.encode('utf -8'))
-    url = 'https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/' + escapedSummonerName  + '?api_key=RGAPI-eb2d12a4-fb4e-4c6c-b621-4b2fa15e0208'
+    url = 'https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/%s?api_key=%s' % (escapedSummonerName, api_key)
     r = requests.get(url)
     #print r.headers
     if r.status_code in HTTP_STATUS_CODES:
