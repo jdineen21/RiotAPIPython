@@ -28,7 +28,6 @@ def neatenJson(raw_json):
 @limits(calls=1, period = 2)
 def getFeaturedGames():
     r = requests.get('https://euw1.api.riotgames.com/lol/spectator/v4/featured-games?api_key=%s' % (api_key))
-    print r.json()
     if r.status_code in HTTP_STATUS_CODES:
         print HTTP_STATUS_CODES[r.status_code]
     else:
@@ -37,8 +36,8 @@ def getFeaturedGames():
 @sleep_and_retry
 @limits(calls=1, period = 2)
 def getMatchById(matchId):
-    escapedMatchId = matchId
-    url = 'https://euw1.api.riotgames.com/lol/match/v4/matches/%s?api_key=%s' % (escapedMatchId, api_key)
+    url = 'https://euw1.api.riotgames.com/lol/match/v4/matches/%s?api_key=%s' % (matchId, api_key)
+    print url
     r = requests.get(url)
     if r.status_code in HTTP_STATUS_CODES:
         print HTTP_STATUS_CODES[r.status_code]

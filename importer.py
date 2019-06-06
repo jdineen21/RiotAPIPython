@@ -14,7 +14,11 @@ mydb = mysql.connector.connect(
     passwd="badger77"
 )
 
+print mydb.is_connected()
+
 while True:
+    cache = {}
+
     featured_games = riotApiHandler.getFeaturedGames()
 
     for i in range(len(featured_games['gameList'])):
@@ -31,12 +35,15 @@ while True:
         participants = game['participants']
         platformId = game['platformId']
 
-        riotApiHandler.getMatchById(gameId)
+        for iter in range(len(participants)):
+            summonerId = riotApiHandler.getSummonerBySummonerName(participants[iter]['summonerName'])['accountId']
+            matchlists = riotApiHandler.getMatchlistsBySummonerId(summonerId)
+            for match in range(len(matchlists['matches'])):
+                print riotApiHandler.neatenJson(riotApiHandler.getMatchById(matchlists['matches'][match]['gameId']))
 
-        #for iter in range(len(participants)):
-        #    summonerId = riotApiHandler.getSummonerBySummonerName(participants[iter]['summonerName'])['accountId']
-        #    matchlists = riotApiHandler.getMatchlistsBySummonerId(summonerId)
-        #    print riotApiHandler.neatenJson(matchlists)
+            #print riotApiHandler.neatenJson(matchlists)
+    
+
 
 
     #print participants
