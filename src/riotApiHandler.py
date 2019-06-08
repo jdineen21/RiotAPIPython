@@ -4,6 +4,7 @@ from ratelimit import limits, RateLimitException, sleep_and_retry
 import urllib
 import json
 import requests
+import time
 
 api_key = 'RGAPI-c1e1674a-d99e-4bf4-8a5b-5d53d7364b7a'
 
@@ -30,6 +31,8 @@ def getFeaturedGames():
     r = requests.get('https://euw1.api.riotgames.com/lol/spectator/v4/featured-games?api_key=%s' % (api_key))
     if r.status_code in HTTP_STATUS_CODES:
         print HTTP_STATUS_CODES[r.status_code]
+        time.sleep(20)
+        getFeaturedGames()
     else:
         return r.json()
 
@@ -40,6 +43,8 @@ def getMatchById(matchId):
     r = requests.get(url)
     if r.status_code in HTTP_STATUS_CODES:
         print HTTP_STATUS_CODES[r.status_code]
+        time.sleep(20)
+        getMatchById(matchId)
     else:
         return r.json()
 
@@ -51,6 +56,8 @@ def getMatchlistsBySummonerId(summonerId):
     r = requests.get(url)
     if r.status_code in HTTP_STATUS_CODES:
         print HTTP_STATUS_CODES[r.status_code]
+        time.sleep(20)
+        getMatchlistsBySummonerId(summonerId)
     else:
         return r.json()
 
@@ -62,5 +69,7 @@ def getSummonerBySummonerName(summonerName):
     r = requests.get(url)
     if r.status_code in HTTP_STATUS_CODES:
         print HTTP_STATUS_CODES[r.status_code]
+        time.sleep(20)
+        getSummonerBySummonerName(summonerName)
     else:
         return r.json()

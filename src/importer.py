@@ -7,7 +7,8 @@ import hashlib
 import mysql.connector
 import riotApiHandler
 
-from match import *
+from match import Match
+from sqlalchemy import Column, Integer, String
 
 
 mydb = mysql.connector.connect(
@@ -42,28 +43,16 @@ while True:
             matchlists = riotApiHandler.getMatchlistsBySummonerId(summonerId)
             for y in range(len(matchlists['matches'])):
                 matchData = riotApiHandler.getMatchById(matchlists['matches'][y]['gameId'])
-                m = Match(matchData)
 
-                mydb.commit
+                try:
+                    m = Match(matchData)
+                except Exception:
+                    print Exception
+                    print
+                    print riotApiHandler.neatenJson(matchData)
+                
+                print m.__class__
+
+                #mydb.commit
                 #mydb.prepare_for_mysql
                 
-
-            #print riotApiHandler.neatenJson(matchlists)
-    
-
-
-
-    #print participants
-
-    #match = riotApiHandler.getMatchById(gameId)
-    #print match
-
-#print type(featured_games)
-
-#mydb = mysql.connector.connect(
-#    host="localhost",
-#    user="admin",
-#    passwd="badger77"
-#)
-
-#print(mydb)

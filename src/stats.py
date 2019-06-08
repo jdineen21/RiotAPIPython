@@ -10,9 +10,12 @@ class Stats:
         self.doubleKills = stats['doubleKills']
         self.firstBloodAssist = stats['firstBloodAssist']
         self.firstBloodKill = stats['firstBloodKill']
-        self.firstInhibitorAssist = stats['firstInhibitorAssist']
-        self.firstInhibitorKill = stats['firstInhibitorKill']
-        self.firstTowerAssist = stats['firstTowerAssist']
+        # Line causes KeyError exception needs investigating
+        #self.firstInhibitorAssist = stats['firstInhibitorAssist']
+        # Line causes KeyError exception needs investigating
+        #self.firstInhibitorKill = stats['firstInhibitorKill']
+        # Line causes KeyError exception needs investigating
+        #self.firstTowerAssist = stats['firstTowerAssist']
         self.firstTowerKill = stats['firstTowerKill']
         self.goldEarned = stats['goldEarned']
         self.goldSpent = stats['goldSpent']
