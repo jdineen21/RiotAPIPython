@@ -4,9 +4,11 @@ import json
 import time
 import csv
 import hashlib
-
 import mysql.connector
 import riotApiHandler
+
+from match import *
+
 
 mydb = mysql.connector.connect(
     host="localhost",
@@ -14,7 +16,7 @@ mydb = mysql.connector.connect(
     passwd="badger77"
 )
 
-print mydb.is_connected()
+print 'DB Connected: %s' % (mydb.is_connected())
 
 while True:
     cache = {}
@@ -35,11 +37,16 @@ while True:
         participants = game['participants']
         platformId = game['platformId']
 
-        for iter in range(len(participants)):
-            summonerId = riotApiHandler.getSummonerBySummonerName(participants[iter]['summonerName'])['accountId']
+        for x in range(len(participants)):
+            summonerId = riotApiHandler.getSummonerBySummonerName(participants[x]['summonerName'])['accountId']
             matchlists = riotApiHandler.getMatchlistsBySummonerId(summonerId)
-            for match in range(len(matchlists['matches'])):
-                print riotApiHandler.neatenJson(riotApiHandler.getMatchById(matchlists['matches'][match]['gameId']))
+            for y in range(len(matchlists['matches'])):
+                matchData = riotApiHandler.getMatchById(matchlists['matches'][y]['gameId'])
+                m = Match(matchData)
+
+                mydb.commit
+                #mydb.prepare_for_mysql
+                
 
             #print riotApiHandler.neatenJson(matchlists)
     

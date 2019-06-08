@@ -5,7 +5,7 @@ import urllib
 import json
 import requests
 
-api_key = 'RGAPI-eb2d12a4-fb4e-4c6c-b621-4b2fa15e0208'
+api_key = 'RGAPI-c1e1674a-d99e-4bf4-8a5b-5d53d7364b7a'
 
 HTTP_STATUS_CODES = {
 400:	'Bad request',
@@ -37,7 +37,6 @@ def getFeaturedGames():
 @limits(calls=1, period = 2)
 def getMatchById(matchId):
     url = 'https://euw1.api.riotgames.com/lol/match/v4/matches/%s?api_key=%s' % (matchId, api_key)
-    print url
     r = requests.get(url)
     if r.status_code in HTTP_STATUS_CODES:
         print HTTP_STATUS_CODES[r.status_code]
