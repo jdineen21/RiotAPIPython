@@ -1,13 +1,11 @@
 
 
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Table, Integer, String
 
 from participantIdentity import ParticipantIdentity
 from participants import Participants
 from teams import Teams
-
-import riotApiHandler
 
 Base = declarative_base()
 
@@ -22,7 +20,7 @@ class Match(Base):
     gameType = Column(String)
     gameVersion = Column(String)
     mapId = Column(Integer)
-    participantIdentities = 
+    participantIdentities = Column(Integer)
     gameCreation = Column(Integer)
     gameCreation = Column(Integer)
     gameCreation = Column(Integer)
