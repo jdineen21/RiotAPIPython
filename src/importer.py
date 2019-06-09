@@ -8,7 +8,7 @@ import mysql.connector
 import riotApiHandler
 
 from match import Match
-from sqlalchemy import Column, Integer, String
+#from sqlalchemy import Column, Integer, String
 
 
 mydb = mysql.connector.connect(

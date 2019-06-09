@@ -1,6 +1,7 @@
 
-#from sqlalchemy.ext.declarative import declarative_base
-#from sqlalchemy import Column, Integer, String
+
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String
 
 from participantIdentity import ParticipantIdentity
 from participants import Participants
@@ -8,9 +9,26 @@ from teams import Teams
 
 import riotApiHandler
 
-#Base = declarative_base()
+Base = declarative_base()
 
-class Match:
+class Match(Base):
+    __tablename__ = 'matches'
+
+    id = Column(Integer, primary_key=True)
+    gameCreation = Column(Integer)
+    gameDuration = Column(Integer)
+    gameId = Column(Integer)
+    gameMode = Column(String)
+    gameType = Column(String)
+    gameVersion = Column(String)
+    mapId = Column(Integer)
+    participantIdentities = 
+    gameCreation = Column(Integer)
+    gameCreation = Column(Integer)
+    gameCreation = Column(Integer)
+    gameCreation = Column(Integer)
+    gameCreation = Column(Integer)
+
     def __init__(self, matchData):
         self.gameCreation = matchData['gameCreation']
         self.gameDuration = matchData['gameDuration']
