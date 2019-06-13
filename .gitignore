@@ -1,0 +1,6 @@
+# List of files/folders to exclude
+/.idea
+/.vscode
+
+*.pyc
+match-seed.data
