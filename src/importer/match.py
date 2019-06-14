@@ -29,7 +29,6 @@ class Match(Base):
     queueId = Column(Integer)
     seasonId = Column(Integer)
 
-    #participantIdentities = relationship('ParticipantIdentity', back_populates='match')
     participants = relationship('Participant', back_populates='match')
     teams = relationship('Team', back_populates='match')
 

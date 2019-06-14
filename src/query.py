@@ -13,10 +13,20 @@ from importer.static import Item
 
 from sqlalchemy.orm import sessionmaker
 
+import statistics
+
 session = sessionmaker(bind=engine)()
 
-result = session.query(Match).filter(Match.gameMode == 'CLASSIC')
-games = []
+result = session.query(Match.gameDuration).filter(Match.gameMode == 'CLASSIC')
+time = []
 for row in result:
-    games.append(row.gameId)
-print len(games)
+    time.append(row[0])
+
+print sum(time)/len(time)/60
+
+result = session.query(Stats.totalDamageDealt).join(Participant, Stats.id==Participant.id).join(Match, Participant.gameId==Match.gameId).filter(Match.gameMode=='ARAM')
+time = []
+for row in result:
+    time.append(row[0])
+
+print sum(time)/len(time)
