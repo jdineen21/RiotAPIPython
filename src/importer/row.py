@@ -8,6 +8,8 @@ from importer.match import Ban
 
 from sqlalchemy import exists
 
+import json
+
 def insertData(session, matchData):
     row = Match(
         gameCreation=matchData.get('gameCreation'),

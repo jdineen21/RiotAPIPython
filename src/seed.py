@@ -5,15 +5,20 @@ from importer.row import insertData
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import exists
 
+import ast
+import json
 import sqlalchemy.exc
 
 matchDataList = []
 with open('match-seed.data', 'r') as file:
     matchDataList = file.read().split('\n')
 
+print len(matchDataList)
+
 session = sessionmaker(bind=engine)()
 
-for matchData in matchDataList:
+for i in range(len(matchDataList)):
+    matchData = ast.literal_eval(matchDataList[i])
     row = insertData(session, matchData)
     try:
         session.add(row)
@@ -26,3 +31,5 @@ for matchData in matchDataList:
         print 'Error on commit'
         print e
         pass
+
+session.close()
