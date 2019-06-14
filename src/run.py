@@ -1,13 +1,12 @@
 from importer.match import engine
-from importer.row import insertData
-
 from importer.match import Match
+from importer.row import insertData
+from importer import riotApiHandler
 
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import exists
 
 import sqlalchemy.exc
-from importer import riotApiHandler
 
 session = sessionmaker(bind=engine)()
 print ('Initialisation Completed')
