@@ -1,7 +1,6 @@
 
 from importer.match import engine
 from importer.match import Match
-#from importer.match import ParticipantIdentity
 from importer.match import Player
 from importer.match import Participant
 from importer.match import Stats

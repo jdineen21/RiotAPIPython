@@ -48,7 +48,7 @@ class Participant(Base):
     match = relationship('Match', back_populates='participants')
     players = relationship('Player', back_populates='particpant')
 
-    stats = relationship('Stats', back_populates='participant')    
+    stats = relationship('Stats', back_populates='participant')
 
 class Player(Base):
 

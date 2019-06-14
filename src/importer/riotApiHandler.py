@@ -6,7 +6,7 @@ import json
 import requests
 import time
 
-api_key = 'RGAPI-5da936b2-952a-48a1-a1fb-39e0997a21d6'
+api_key = 'RGAPI-3e65b948-34c2-44f0-a731-1f4fad3ab573'
 
 HTTP_STATUS_CODES = {
 400:	'Bad request',
@@ -75,18 +75,18 @@ def getSummonerBySummonerName(summonerName):
         return r.json()
 
 def getChampionData():
-    r = requests.get('http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json?api_key=%s' % (api_key))
+    r = requests.get('http://ddragon.leagueoflegends.com/cdn/9.12.1/data/en_US/champion.json?api_key=%s' % (api_key))
     if r.status_code in HTTP_STATUS_CODES:
-        print 'getFeaturedGames: %s' % HTTP_STATUS_CODES[r.status_code]
+        print 'getChampionData: %s' % HTTP_STATUS_CODES[r.status_code]
         time.sleep(20)
         getFeaturedGames()
     else:
         return r.json()
 
 def getItemData():
-    r = requests.get('http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/item.json?api_key=%s' % (api_key))
+    r = requests.get('http://ddragon.leagueoflegends.com/cdn/9.12.1/data/en_US/item.json?api_key=%s' % (api_key))
     if r.status_code in HTTP_STATUS_CODES:
-        print 'getFeaturedGames: %s' % HTTP_STATUS_CODES[r.status_code]
+        print 'getItemData: %s' % HTTP_STATUS_CODES[r.status_code]
         time.sleep(20)
         getFeaturedGames()
     else:
