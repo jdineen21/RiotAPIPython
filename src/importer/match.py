@@ -69,8 +69,8 @@ class Stats(Base):
 
     __tablename__ = 'stats'
 
-    statsId = Column(Integer, primary_key=True)
-    id = Column(Integer, ForeignKey('participants.id'))
+    id = Column(Integer, primary_key=True)
+    participantId = Column(Integer, ForeignKey('participants.id'))
     assists = Column(Integer)
     champLevel = Column(Integer)
     combatPlayerScore = Column(Integer)
@@ -106,7 +106,6 @@ class Stats(Base):
     magicalDamageTaken = Column(Integer)
     neutralMinionsKilled = Column(Integer)
     objectivePlayerScore = Column(Integer)
-    participantId = Column(Integer)
     pentaKills = Column(Integer)
     perk0 = Column(Integer)
     perk0Var1 = Column(Integer)
@@ -178,7 +177,7 @@ class Team(Base):
 
     __tablename__ = 'teams'
 
-    teamIdKey = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True)
     gameId = Column(Integer, ForeignKey('matches.gameId'))
     baronKills = Column(Integer)
     dominionVictoryScore = Column(Integer)
@@ -204,7 +203,7 @@ class Ban(Base):
     __tablename__ = 'bans'
 
     bansId = Column(Integer, primary_key=True)
-    teamIdKey = Column(Integer, ForeignKey('teams.teamIdKey'))
+    teamId = Column(Integer, ForeignKey('teams.id'))
     pickTurn = Column(Integer)
     championId = Column(Integer)
 
