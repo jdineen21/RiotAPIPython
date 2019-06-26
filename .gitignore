@@ -1,6 +1,7 @@
 # List of files/folders to exclude
 /.idea
 /.vscode
+/sqlite
 
 *.pyc
 match-seed.data
