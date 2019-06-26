@@ -11,7 +11,7 @@ import sqlalchemy.exc
 session = sessionmaker(bind=engine)()
 print ('Initialisation Completed')
 
-for loop in range(25):
+while True:
     featuredGames = riotApiHandler.getFeaturedGames()
     for x in range(len(featuredGames['gameList'])):
         for y in range(len(featuredGames['gameList'][x]['participants'])):

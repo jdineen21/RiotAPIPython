@@ -6,7 +6,7 @@ import json
 import requests
 import time
 
-api_key = 'RGAPI-3e65b948-34c2-44f0-a731-1f4fad3ab573'
+api_key = 'RGAPI-a1921f78-bc3f-493e-ad2e-5d72f2d41336'
 
 HTTP_STATUS_CODES = {
 400:	'Bad request',
