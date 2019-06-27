@@ -32,9 +32,12 @@ while True:
                     row = insertData(session, matchData)
 
                     try:
-                        session.add(row)
-                        session.commit()
-                        print 'Data Inserted'
+                        if ('9.13' in matchData.get('gameVersion')):
+                            session.add(row)
+                            session.commit()
+                            print 'Data Inserted'
+                        else:
+                            print 'Data from old Patch'
                     except sqlalchemy.exc.IntegrityError as e:
                         print 'Integrity Error'
                         session.rollback()

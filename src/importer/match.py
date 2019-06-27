@@ -11,7 +11,7 @@ from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
 
-engine = create_engine('sqlite:///sqlite/main.db')
+engine = create_engine('sqlite:///sqlite/matches.db')
 
 class Match(Base):
 
@@ -202,7 +202,7 @@ class Ban(Base):
 
     __tablename__ = 'bans'
 
-    bansId = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True)
     teamId = Column(Integer, ForeignKey('teams.id'))
     pickTurn = Column(Integer)
     championId = Column(Integer)
