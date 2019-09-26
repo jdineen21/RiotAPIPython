@@ -6,7 +6,7 @@ import json
 import requests
 import time
 
-api_key = 'RGAPI-3f73c12d-564e-4fc1-a9fc-985064e208f1'
+api_key = 'RGAPI-cdccaab2-b666-40b1-b2ce-1551b27debe8'
 
 HTTP_STATUS_CODES = {
 400:	'Bad request',
@@ -45,6 +45,18 @@ def getMatchById(matchId):
         print 'getMatchById: %s' % HTTP_STATUS_CODES[r.status_code]
         time.sleep(20)
         getMatchById(matchId)
+    else:
+        return r.json()
+
+@sleep_and_retry
+@limits(calls=1, period = 2)
+def getMatchTimelineById(matchId):
+    url = 'https://euw1.api.riotgames.com//lol/match/v4/timelines/by-match/%s?api_key=%s' % (matchId, api_key)
+    r = requests.get(url)
+    if r.status_code in HTTP_STATUS_CODES:
+        print 'getMatchTimelineById: %s' % HTTP_STATUS_CODES[r.status_code]
+        time.sleep(20)
+        getMatchTimelineById(matchId)
     else:
         return r.json()
 

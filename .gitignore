@@ -4,4 +4,7 @@
 /sqlite
 
 *.pyc
+
+match-data.meta
 match-seed.data
+match-timeline-seed.data
