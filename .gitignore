@@ -3,6 +3,8 @@
 /.vscode
 /sqlite
 
+.env
+
 *.pyc
 
 match-data.meta

@@ -41,10 +41,13 @@ def getFeaturedGames():
 def getMatchById(matchId):
     url = 'https://euw1.api.riotgames.com/lol/match/v4/matches/%s?api_key=%s' % (matchId, api_key)
     r = requests.get(url)
-    if r.status_code in HTTP_STATUS_CODES:
+    if r.status_code in [429]:
         print 'getMatchById: %s' % HTTP_STATUS_CODES[r.status_code]
         time.sleep(20)
         getMatchById(matchId)
+    elif r.status_code in HTTP_STATUS_CODES:
+        print 'getMatchById: %s' % HTTP_STATUS_CODES[r.status_code]
+        return None
     else:
         return r.json()
 
@@ -53,10 +56,13 @@ def getMatchById(matchId):
 def getMatchTimelineById(matchId):
     url = 'https://euw1.api.riotgames.com//lol/match/v4/timelines/by-match/%s?api_key=%s' % (matchId, api_key)
     r = requests.get(url)
-    if r.status_code in HTTP_STATUS_CODES:
+    if r.status_code in [429]:
         print 'getMatchTimelineById: %s' % HTTP_STATUS_CODES[r.status_code]
         time.sleep(20)
         getMatchTimelineById(matchId)
+    elif r.status_code in HTTP_STATUS_CODES:
+        print 'getMatchTimelineById: %s' % HTTP_STATUS_CODES[r.status_code]
+        return None
     else:
         return r.json()
 
@@ -91,15 +97,18 @@ def getChampionData():
     if r.status_code in HTTP_STATUS_CODES:
         print 'getChampionData: %s' % HTTP_STATUS_CODES[r.status_code]
         time.sleep(20)
-        getFeaturedGames()
+        getChampionData()
     else:
         return r.json()
 
 def getItemData():
     r = requests.get('http://ddragon.leagueoflegends.com/cdn/9.12.1/data/en_US/item.json?api_key=%s' % (api_key))
-    if r.status_code in HTTP_STATUS_CODES:
+    if r.status_code in [429]:
         print 'getItemData: %s' % HTTP_STATUS_CODES[r.status_code]
         time.sleep(20)
-        getFeaturedGames()
+        getItemData()
+    elif r.status_code in HTTP_STATUS_CODES:
+        print 'getItemData: %s' % HTTP_STATUS_CODES[r.status_code]
+        return None
     else:
         return r.json()
