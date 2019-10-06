@@ -1,10 +1,15 @@
 
 import api
+import json
 import datetime
 
 meta_file = open('match-data.meta', 'a+')
 match_file = open('match-seed.data', 'a+')
 match_timeline_file = open('match-timeline-seed.data', 'a+')
+
+meta_file.close()
+match_file.close()
+match_timeline_file.close()
 
 while True:
 
@@ -33,10 +38,21 @@ while True:
                     matchlists.remove(matchlistsBackup[i])
 
             # Remove incorrect queue type matches
+            # Cuts down on unneccesary api calls
             matchlistsBackup = list(matchlists)
             for i in range(len(matchlistsBackup)):
                 if not matchlistsBackup[i]['queue'] in [400, 420, 430, 440, 450]:
                     deleteCount += 1
+                    matchlists.remove(matchlistsBackup[i])
+
+            # Remove overlapping match data pre call
+            # Cuts down on unneccesary api calls
+            with open('match-data.meta', 'r+') as meta_file_read:
+                meta_file_list = meta_file_read.read().split('\n')
+            
+            matchlistsBackup = list(matchlists)
+            for i in range(len(matchlistsBackup)):
+                if str(matchlistsBackup[i]['gameId']) in meta_file_list:
                     matchlists.remove(matchlistsBackup[i])
             
             print 'Deleted %s matches from matchlist' % (deleteCount)
@@ -54,10 +70,16 @@ while True:
                     print 'Skipping Incorrect Game Version'
                 elif not matchData.get('queueId') in [400, 420, 430, 440, 450]:
                     print 'Skipping Incorrect Queue Type'
-                elif str(matchData.get('gameId')) in meta_file.read().split('\n'):
-                    print 'Skipping Overlapping Data'
                 else:
                     print 'Data Inserted'
+                    meta_file = open('match-data.meta', 'a+')
+                    match_file = open('match-seed.data', 'a+')
+                    match_timeline_file = open('match-timeline-seed.data', 'a+')
+
                     meta_file.write(str(matchData.get('gameId'))+'\n')
-                    match_file.write(str(matchData)+'\n')
-                    match_timeline_file.write(str(timelineData)+'\n')
+                    match_file.write(json.dumps(matchData)+'\n')
+                    match_timeline_file.write(json.dumps(timelineData)+'\n')
+
+                    meta_file.close()
+                    match_file.close()
+                    match_timeline_file.close()

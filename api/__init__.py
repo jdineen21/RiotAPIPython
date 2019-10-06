@@ -4,7 +4,7 @@ import json
 import requests
 import time
 
-delay = 1
+delay = 0.9
 
 def getFeaturedGames():
     time.sleep(delay)
@@ -12,7 +12,7 @@ def getFeaturedGames():
     if r.status_code != 200:
         return None
     
-    return r.json()
+    return json.loads(r.content)
 
 def getMatchById(matchId):
     time.sleep(delay)
@@ -20,7 +20,7 @@ def getMatchById(matchId):
     if r.status_code != 200:
         return None
     
-    return r.json()
+    return json.loads(r.content)
 
 def getMatchTimelineById(matchId):
     time.sleep(delay)
@@ -28,7 +28,7 @@ def getMatchTimelineById(matchId):
     if r.status_code != 200:
         return None
     
-    return r.json()
+    return json.loads(r.content)
 
 def getMatchlistsBySummonerId(summonerId):
     time.sleep(delay)
@@ -36,7 +36,7 @@ def getMatchlistsBySummonerId(summonerId):
     if r.status_code != 200:
         return None
     
-    return r.json()
+    return json.loads(r.content)
 
 def getSummonerBySummonerName(summonerName):
     time.sleep(delay)
@@ -44,4 +44,4 @@ def getSummonerBySummonerName(summonerName):
     if r.status_code != 200:
         return None
     
-    return r.json()
+    return json.loads(r.content)
